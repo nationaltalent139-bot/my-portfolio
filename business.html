@@ -114,11 +114,57 @@ footer {
     </div>
 </section>
 
+    <section class="services" id="enquiry">
+  <h2>Send Your Enquiry</h2>
+
+  <form id="clientForm">
+    <input type="text" id="clientName"
+      placeholder="Your Name" required>
+
+    <br><br>
+
+    <input type="tel" id="clientPhone"
+      placeholder="Mobile Number" required>
+
+    <br><br>
+
+    <textarea id="clientMessage"
+      placeholder="What website do you need?"
+      required></textarea>
+
+    <br>
+
+    <button type="submit" class="btn">
+      Send Enquiry on WhatsApp
+    </button>
+  </form>
+    </section>
+
 <footer id="contact">
     <h2>Contact Us</h2>
     <p>Email: nationaltalent139@gmail.com</p>
     <p>© 2026 National Web Studio. All Rights Reserved.</p>
 </footer>
+<script>
+document.getElementById("clientForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  var name = document.getElementById("clientName").value;
+  var phone = document.getElementById("clientPhone").value;
+  var message = document.getElementById("clientMessage").value;
+
+  var text = "New Client Enquiry\n"
+    + "Name: " + name + "\n"
+    + "Phone: " + phone + "\n"
+    + "Requirement: " + message;
+
+  var whatsappNumber = "919422402297";
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text),
+    "_blank"
+  );
+});
+                                     </script>
 </body>
 </html>
